@@ -20,7 +20,9 @@ class ToolWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(ToolWindow, self).__init__()
         QtCompat.load_ui(str(ui_path), self)
+
         self.engine = engine.get_engine()
+        self.buttons = engine.get_engine().buttons
         self.load_ui()
 
         for f in datas.get_files():
@@ -28,7 +30,6 @@ class ToolWindow(QtWidgets.QMainWindow):
 
     def load_ui(self):
         button_list = {}
-        self.buttons = engine.get_engine().buttons
         for key, value in self.buttons.items():
             button = QtWidgets.QPushButton(value)
             button.setObjectName(key)

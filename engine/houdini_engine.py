@@ -1,7 +1,8 @@
 import hou
 import os.path
 
-class houdiniEngine:
+
+class HoudiniEngine:
 
     # Needed Buttons
     buttons = {
